@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Test Extension",
+  "description": "test extension",
+  "version": "0.1",
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  // "content_scripts": [{
+  //   "matches": ["*://meeet.google.com/*"],
+  //   "js": ["content.js"]
+  // }],
+  "page_action": {
+    "default_title": "Test",
+    "default_popup": "index.html"
+  },
+  "permissions": ["activeTab", "declarativeContent", "storage", "identity", "identity.email"]
+}
