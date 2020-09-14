@@ -5,12 +5,24 @@
   "version": "0.1",
   "background": {
     "persistent": false,
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
-  // "content_scripts": [{
-  //   "matches": ["*://meeet.google.com/*"],
-  //   "js": ["content.js"]
-  // }],
+  "content_scripts": [
+    {
+      "matches": ["http://meet.google.com/*", "https://meet.google.com/*"],
+      "js": [
+        "lib/dropzone-5.7.0/min/dropzone.min.js",
+        "lib/jquery-3.5.1.min.js",
+        "content.js"
+      ],
+      "css": ["lib/dropzone-5.7.0/dropzone.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    "lib/dropzone-5.7.0/dropzone.css"
+  ],
   "page_action": {
     "default_title": "Test",
     "default_popup": "index.html"
